@@ -104,19 +104,12 @@ static void part_1() {
     int dif = abs(list1[i] - list2[i]);
     total_dif += dif;
   }
-  printf("%d\n", total_dif);
+  printf("part 1: %d\n", total_dif);
 
   free(list1);
   free(list2);
   list1 = list2 = NULL;
 }
-
-
-
-
-
-
-
 
 struct frequency_entry {
   int num;
@@ -157,18 +150,15 @@ static void part_2() {
     }
   }
 
-  printf("part 2 %d\n", total_score);
+  printf("part 2: %d\n", total_score);
 
   free(list1);
   free(list2);
   list1 = list2 = NULL;
 }
 
-static int sz = 9;
-static int stuff[] = {5, 3, 4, 1, 6, 3, 2, 3, 8};
-
-
 int main() {
+  part_1();
   part_2();
   //sort(stuff, sz);
 
