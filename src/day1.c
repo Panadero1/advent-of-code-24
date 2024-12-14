@@ -41,27 +41,18 @@ static void swap(int* a, int* b) {
 static void sort(int* list, int n) {
   // base cases
   if (n == 1) {
-    //printf("sorting 1! %d\n", list[0]);
     return;
   }
   if (n == 2) {
-    //printf("sorting 2! %d %d\n", list[0], list[1]);
     if (list[0] > list[1]) {
       swap(&list[0], &list[1]);
     }
-    //printf("sorted 2! %d %d\n", list[0], list[1]);
     return;
   }
   
   // recursive case
-  //printf("sorting n [");
-  for (int i = 0; i < n; i++) {
-    //printf("%d, ", list[i]);
-  }
-  //printf("]\n");
 
   int pivot = list[0];
-  //printf("pivot selected: %d\n", pivot);
   
   bool sorted = true;
   int small = pivot;
@@ -73,7 +64,6 @@ static void sort(int* list, int n) {
     small = list[i];
   }
   if (sorted) {
-    //printf("sorted already\n");
     return;
   }
   
@@ -88,26 +78,13 @@ static void sort(int* list, int n) {
     }
   }
 
-  //printf("separated around pivot %d n [", pivot);
-  for (int i = 0; i < n; i++) {
-    //printf("%d, ", list[i]);
-  }
-  //printf("]\n");
-
   if (lesser_idx > -1) {
-    //printf("recursing [0,%d)\n", lesser_idx + 1);
     sort(list, lesser_idx + 1);
   }
   if (greater_idx < (n - 1)) {
-    //printf("recursing [%d,%d)\n", greater_idx, n);
     sort(list + greater_idx, n - greater_idx);
   }
 
-  //printf("sorted n [");
-  for (int i = 0; i < n; i++) {
-    //printf("%d, ", list[i]);
-  }
-  //printf("]\n");
 }
 
 static void part_1() {
